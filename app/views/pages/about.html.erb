@@ -1,0 +1,25 @@
+<div class="jumbotron">
+
+<h1>About</h1>
+
+<h2>This is a alpha-blog app</h2>
+
+<p>This is a test application done on ror</p>
+<p>This includes models Article,Country,State</p>
+
+</div>
+
+<div>
+<h3>comment on this page:</h3>
+		<p><label><input type="checkbox" /> Good</label></p>
+        <p><label><input type="checkbox" /> very good </label></p>
+        <p><label><input type="checkbox" /> bad</label></p>
+        <p><label><input type="checkbox" /> very bad </label></p>
+
+</div>
+
+<br><br>
+<%= link_to t('.pages', :default => t("helpers.links.pages")),
+                      root_path,
+                      :class => 'btn btn-primary' %>
+
