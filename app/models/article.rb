@@ -1,8 +1,12 @@
 class Article < ActiveRecord::Base
 
 	
-	validates :title,presence: true,length:{minimum: 3,maximum:200},if: :can_validate?
-	validates :description,presence: true,length:{minimum: 5,maximum:200},if: :can_validate?
+	validates :title, presence: true , uniqueness: true , on: :create,
+		      length:{minimum: 4,maximum:200},
+			   exclusion: { in: %w($ & % #)}, if: :can_validate?
+	validates :description, presence: true,
+			  length:{minimum: 5,maximum:200}, if: :can_validate?
+
 	#validates :user_id,presence:true
 
 
